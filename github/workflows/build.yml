@@ -31,11 +31,3 @@ jobs:
       with:
         name: PUBG_Bypass_v2
         path: dist/PUBG_Bypass_v2.exe
-    
-    - name: Create Release
-      uses: softprops/action-gh-release@v2
-      with:
-        files: dist/PUBG_Bypass_v2.exe
-        tag_name: v2.0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
