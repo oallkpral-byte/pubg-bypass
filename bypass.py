@@ -1,6 +1,6 @@
 import subprocess, os, sys, time, ctypes, json, shutil
 
-print("PUBG Bypass v2.0 для MEmu Play запущен...")
+print("PUBG Bypass v2.1 для MEmu Play запущен...")
 
 # ============================================
 # 1. ПОИСК MEmu Play
@@ -120,11 +120,12 @@ for file in emulator_files:
             pass
 
 # ============================================
-# 7. ЗАПУСК
+# 7. ЗАПУСК (БЕЗ ОПЦИЙ - ИСПРАВЛЕНО)
 # ============================================
-print("[6/6] Запускаю MEmu Play с маскировкой...")
+print("[6/6] Запускаю MEmu Play...")
 
-os.system(f'start "" "{memu}" -no-sandbox -disable-gpu')
+# Просто запускаем MEmu без параметров
+os.startfile(memu)
 time.sleep(10)
 
 print("\n" + "="*50)
