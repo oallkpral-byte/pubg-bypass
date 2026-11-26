@@ -20,16 +20,22 @@ jobs:
       with:
         python-version: '3.11'
     
-    - name: Install dependencies
-      run: |
-        pip install pyinstaller
+    - name: Install PyInstaller
+      run: pip install pyinstaller
     
     - name: Build EXE
-      run: |
-        pyinstaller --onefile --console --name "PUBG_Bypass" bypass.py
+      run: pyinstaller --onefile --console --name "PUBG_Bypass_v2" bypass.py
     
-    - name: Upload artifact
+    - name: Upload EXE
       uses: actions/upload-artifact@v4
       with:
-        name: PUBG_Bypass
-        path: dist/PUBG_Bypass.exe
+        name: PUBG_Bypass_v2
+        path: dist/PUBG_Bypass_v2.exe
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: dist/PUBG_Bypass_v2.exe
+        tag_name: v2.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
