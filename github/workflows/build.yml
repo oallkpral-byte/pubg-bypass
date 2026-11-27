@@ -24,10 +24,10 @@ jobs:
       run: pip install pyinstaller
     
     - name: Build EXE
-      run: pyinstaller --onefile --console --name "PUBG_Bypass_v2" bypass.py
+      run: pyinstaller --onefile --console --name "PUBG_Bypass_v3" bypass.py
     
     - name: Upload EXE
       uses: actions/upload-artifact@v4
       with:
-        name: PUBG_Bypass_v2
-        path: dist/PUBG_Bypass_v2.exe
+        name: PUBG_Bypass_v3
+        path: dist/PUBG_Bypass_v3.exe
